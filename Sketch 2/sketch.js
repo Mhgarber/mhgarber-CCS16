@@ -10,7 +10,6 @@ function draw() {
   for (var i = 0; i < 12; i++) {
     var colorVar = color(i * 20, 100 - (i *5), 100 - (i *9));
     
-      console.log(i * 3);
     fill(colorVar);
     noStroke();
     beginShape();
