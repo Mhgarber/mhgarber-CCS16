@@ -1,29 +1,50 @@
-/**
- * by Allison Parrish
- */
+
 var lexicon;
 function setup() {
   createCanvas(400, 400);
   lexicon = new RiLexicon();
-  background(50);
+  background(0);
   fill(255);
   noStroke();
-  textSize(32);
+  textSize(15);
   textAlign(CENTER, CENTER);
-  text("Click for fun", width/2, height/2);
+  text("A Wonderful Bird is the Pelican", width/2, height/2);
 }
 function draw() {
 }
 function mousePressed() {
   background(50);
   textAlign(LEFT, TOP);
-  var output = "April is the " +
-    lexicon.randomWord("jj") + " " + 
-    lexicon.randomWord("nn") + ", " +
-    lexicon.randomWord("vbg") + " " +
-    lexicon.randomWord("nns") + 
-    " out of the " +
+  var output = "A " +
     lexicon.randomWord("jj") + " " +
-    lexicon.randomWord("nn");
+    lexicon.randomWord("nn") + " " +
+    "is the " +
+    lexicon.randomWord("nn")+ ", " +
+
+    lexicon.randomWord("prp$")+ " " +
+
+    lexicon.randomWord("nn")+ " " +
+    "will hold more than " +
+    lexicon.randomWord("prp$")+ " " +
+   lexicon.randomWord("nn")+ ", " +
+  
+  lexicon.randomWord("nnp")+ " " +
+
+    "can take in " +
+    lexicon.randomWord("prp$")+ " " +
+   lexicon.randomWord("nn")+ " " +
+    " Enough " +
+    lexicon.randomWord("nn")+ " " +
+    "for a week But " +
+    lexicon.randomWord("prp")+ " " +
+    "damned if " +
+    lexicon.randomWord("nn")+ " " +
+    "see how the helican! "
+    
+
+
+
+
+
   text(output, 10, 10, width-20, height-20);
 }
