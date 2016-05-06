@@ -16,6 +16,7 @@ var gunData = [];
 var teethImage;
 var nukeImage;
 var comicSans;
+var button;
 
 
 function preload() {
@@ -41,9 +42,19 @@ function preload() {
   gunData = table.getColumn("Gun");
   columnsArray = [radicalData, terroristData, militaryData, warData,iranData, cubaData, gunData, americaData, nuclearData];
   labelsArray=["Radical", "Terrorist", "Military", "War", "Iran", "Cuba", "Gun", "America", "Nukes"]
+
+  button = createButton('Clickit!');
+  button.position(windowWidth/2 - 35, 80);
+  button.style("font-size", "18px");
+  button.style("background-color", "purple");
+  button.style("color", "white");
+  button.style("border", "none");
+  button.mousePressed(electify);
 }
 
-function mousePressed(){
+
+
+function electify(){
   activeColumn += 1;
   
   if (activeColumn >= columnsArray.length) {
@@ -82,9 +93,12 @@ function draw(){
   
  
   textSize(32);
+  textAlign('center');
   textFont(comicSans);
   fill("white");
-  text(label, 10, 30);
+  text(label, windowWidth/2, 60);
+  
+  textAlign('left');
   textSize(14);
   textFont(comicSans);
   text("GOP Debate 3.10.16", 10, windowHeight - 30);

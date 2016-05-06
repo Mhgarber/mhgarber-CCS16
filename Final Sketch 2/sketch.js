@@ -9,6 +9,8 @@ var trumpThree;
 var trumpFour;
 var imageArray= [];
 var activeImage = 0; 
+var button;
+
 
 function preload() {
   lines = loadStrings('trumpspeech.txt');
@@ -20,7 +22,7 @@ function preload() {
   
 }
 function setup() {
-  createCanvas(700, 700);
+  createCanvas(windowWidth, windowHeight);
   imageArray = [trumpOne,trumpTwo, trumpThree, trumpFour]
   var params = {
     ignoreStopWords: true,
@@ -41,6 +43,14 @@ function setup() {
   randomAdjective = RiTa.randomItem(adjectives); 
   
   
+  button = createButton('Clickit!');
+  button.position(10, 80);
+  button.style("font-size", "18px");
+  button.style("background-color", "red");
+  button.style("color", "white");
+  button.style("border", "none");
+  button.mousePressed(electify);
+  
 
 }
 function draw() {
@@ -60,7 +70,7 @@ function draw() {
   pop();
 }
 
-function mousePressed() {
+function electify() {
   randomAdjective = RiTa.randomItem(adjectives); 
   
   activeImage += 1
